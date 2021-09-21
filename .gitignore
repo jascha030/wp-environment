@@ -1,0 +1,11 @@
+/.idea/
+
+.env
+
+*.php
+*.txt
+*.html
+
+/wp-admin/
+/wp-includes/
+/wp-content/
