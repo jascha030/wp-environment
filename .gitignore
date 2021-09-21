@@ -1,11 +1,14 @@
 /.idea/
 
+# Environment
 .env
 
+# Wordpress files
 *.php
 *.txt
 *.html
 
+# Wordpress directories
 /wp-admin/
 /wp-includes/
 /wp-content/
