@@ -1,0 +1,18 @@
+{
+    "name": "jascha030/wp-starter-environment",
+    "description": "Wordpress development environment",
+    "license": "GPL-2.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "Jascha030\\WpStarterEnvironment\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jascha030",
+            "email": "contact@jaschavanaalst.nl"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
