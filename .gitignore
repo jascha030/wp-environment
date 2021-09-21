@@ -1,11 +1,8 @@
+# Jetbrains IDE's
 /.idea/
 
+# Environment
 .env
 
-*.php
-*.txt
-*.html
-
-/wp-admin/
-/wp-includes/
-/wp-content/
+# Composer
+/vendor/
