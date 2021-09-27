@@ -2,6 +2,9 @@
 /.idea/
 
 # Environment
+!/public/index.php
+!/public/app/*
+
 public/.env
 public/wordpress/
 
