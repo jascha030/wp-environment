@@ -53,6 +53,7 @@
   "scripts": {
     "post-create-project-cmd": [
       "Jascha030\\Xerox\\Composer\\Event\\RootInstallHandler::postInstall"
-    ]
+    ],
+    "format": "public/vendor/bin/php-cs-fixer fix --config=./.php-cs-fixer.dist.php"
   }
 }
