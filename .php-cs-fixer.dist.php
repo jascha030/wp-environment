@@ -33,6 +33,10 @@ if (! empty($options['dirs']) && is_array($options['dirs'])) {
  */
 $directories = preg_filter('/^/', __DIR__ . '/public/app/', $directories);
 
+if (empty($directories)) {
+    exit('Nothing to fix...');
+}
+
 /**
  * Create Finder object.
  */
