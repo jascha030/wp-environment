@@ -24,7 +24,7 @@
     "roots/wp-password-bcrypt": "^1.0",
     "composer/installers": "^1.11",
     "roots/wordpress": "^5.8",
-    "jascha030/xerox": "0.0.5",
+    "jascha030/xerox": "^0",
     "vlucas/phpdotenv": "^5.3"
   },
   "require-dev": {
