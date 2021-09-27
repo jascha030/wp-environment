@@ -3,7 +3,9 @@
 
 # Environment
 public/.env
-public/wordpress/
+
+# Wordpress
+/public/wordpress/
 
 # Composer
-/vendor/
+/public/vendor/
