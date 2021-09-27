@@ -28,7 +28,8 @@
     "vlucas/phpdotenv": "^5.3"
   },
   "require-dev": {
-    "roave/security-advisories": "dev-latest"
+    "roave/security-advisories": "dev-latest",
+    "friendsofphp/php-cs-fixer": "^3.1"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
@@ -52,6 +53,7 @@
   "scripts": {
     "post-create-project-cmd": [
       "Jascha030\\Xerox\\Composer\\Event\\RootInstallHandler::postInstall"
-    ]
+    ],
+    "format": "public/vendor/bin/php-cs-fixer fix --config=./.php-cs-fixer.dist.php"
   }
 }
