@@ -23,7 +23,8 @@
     "php": "^7.4 | ^8.0",
     "roots/wp-password-bcrypt": "^1.0",
     "composer/installers": "^1.11",
-    "roots/wordpress": "^5.8"
+    "roots/wordpress": "^5.8",
+    "jascha030/xerox": "0.0.3"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest"
@@ -32,13 +33,13 @@
   "prefer-stable": true,
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": [
+      "public/app/mu-plugins/{$name}/": [
         "type:wordpress-muplugin"
       ],
-      "web/app/plugins/{$name}/": [
+      "public/app/plugins/{$name}/": [
         "type:wordpress-plugin"
       ],
-      "web/app/themes/{$name}/": [
+      "public/app/themes/{$name}/": [
         "type:wordpress-theme"
       ]
     },
@@ -46,7 +47,7 @@
   },
   "scripts": {
     "post-root-package-install": [
-      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+      "Jascha030\\Xerox\\Composer\\Event\\RootInstallHandler::postInstall"
     ]
   }
 }
