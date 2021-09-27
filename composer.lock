@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "72b95271d45a03ab5d7fb580e25a5b1d",
+    "content-hash": "4f93e85e4e5ecf854b415d06e893a525",
     "packages": [
         {
             "name": "composer/installers",
@@ -220,16 +220,16 @@
         },
         {
             "name": "jascha030/xerox",
-            "version": "0.0.5",
+            "version": "0.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jascha030/xerox.git",
-                "reference": "c3fe35d3ddc0d7ded944775cee66ea1757cb26ce"
+                "reference": "a422aa2ce0c0dd33b9b42cb2e6b013d28d187f4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jascha030/xerox/zipball/c3fe35d3ddc0d7ded944775cee66ea1757cb26ce",
-                "reference": "c3fe35d3ddc0d7ded944775cee66ea1757cb26ce",
+                "url": "https://api.github.com/repos/jascha030/xerox/zipball/a422aa2ce0c0dd33b9b42cb2e6b013d28d187f4b",
+                "reference": "a422aa2ce0c0dd33b9b42cb2e6b013d28d187f4b",
                 "shasum": ""
             },
             "require": {
@@ -266,9 +266,9 @@
             "description": "Framework, heavily inspired by laravel and roots/bedrock, aiming to help relieve your WordPression.",
             "support": {
                 "issues": "https://github.com/jascha030/xerox/issues",
-                "source": "https://github.com/jascha030/xerox/tree/0.0.5"
+                "source": "https://github.com/jascha030/xerox/tree/0.0.6"
             },
-            "time": "2021-09-27T17:59:44+00:00"
+            "time": "2021-09-27T18:13:49+00:00"
         },
         {
             "name": "phpoption/phpoption",
