@@ -2,7 +2,8 @@
 /.idea/
 
 # Environment
-.env
+public/.env
+public/wordpress/
 
 # Composer
 /vendor/
