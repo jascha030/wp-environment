@@ -1,11 +1,6 @@
 <?php
 
 /**
- * Create config
- */
-$config      = new PhpCsFixer\Config();
-
-/**
  * Retrieve custom directories.
  */
 $custom_options = __DIR__ . '/config/php-cs-fixer.php';
@@ -277,7 +272,10 @@ $rules = [
 
 $rules = array_merge($rules, $custom_rules);
 
-return $config
+/**
+ * Create config
+ */
+return (new PhpCsFixer\Config())
     ->setRiskyAllowed(true)
     ->setRules($rules)
     ->setFinder($dirs);
