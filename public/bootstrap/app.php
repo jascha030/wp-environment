@@ -42,6 +42,12 @@ $env = Dotenv::createImmutable($public, '.env')->load();
 WPConfigStore::create($env);
 
 /**
+ * Add custom content root
+ */
+WPConfigStore::add('CONTENT_DIR', '/app');
+WPConfigStore::add('WP_CONTENT_DIR', $public . '/app');
+
+/**
  * WordPress database table prefix.
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
