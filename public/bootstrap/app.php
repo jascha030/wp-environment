@@ -42,10 +42,16 @@ $env = Dotenv::createImmutable($public, '.env')->load();
 WPConfigStore::create($env);
 
 /**
- * Add custom content root
+ * Add custom content root when theme is available
  */
-WPConfigStore::add('CONTENT_DIR', '/app');
-WPConfigStore::add('WP_CONTENT_DIR', $public . '/app');
+$finder = new Symfony\Component\Finder\Finder();
+$count = $finder->in($public . '/app/themes')->directories()->count();
+
+if ($count > 0) {
+    WPConfigStore::add('CONTENT_DIR', '/app');
+    WPConfigStore::add('WP_CONTENT_DIR', $public . '/app');
+}
+
 
 /**
  * WordPress database table prefix.
