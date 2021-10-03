@@ -51,6 +51,7 @@
     "vendor-dir": "public/vendor"
   },
   "scripts": {
+    "initwp": "public/vendor/bin/xerographer init",
     "format": "public/vendor/bin/php-cs-fixer fix --config=./.php-cs-fixer.dist.php"
   }
 }

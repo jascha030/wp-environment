@@ -737,16 +737,16 @@
         },
         {
             "name": "jascha030/xerox",
-            "version": "0.0.13",
+            "version": "0.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jascha030/xerox.git",
-                "reference": "551f6aff01e231a861f41c815eac8c8e05d0d08d"
+                "reference": "a715f4131803a416bb011de7d3f3d0ef92b1ea22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jascha030/xerox/zipball/551f6aff01e231a861f41c815eac8c8e05d0d08d",
-                "reference": "551f6aff01e231a861f41c815eac8c8e05d0d08d",
+                "url": "https://api.github.com/repos/jascha030/xerox/zipball/a715f4131803a416bb011de7d3f3d0ef92b1ea22",
+                "reference": "a715f4131803a416bb011de7d3f3d0ef92b1ea22",
                 "shasum": ""
             },
             "require": {
@@ -790,9 +790,9 @@
             "description": "Framework, heavily inspired by laravel and roots/bedrock, aiming to help relieve your WordPression.",
             "support": {
                 "issues": "https://github.com/jascha030/xerox/issues",
-                "source": "https://github.com/jascha030/xerox/tree/0.0.13"
+                "source": "https://github.com/jascha030/xerox/tree/0.0.14"
             },
-            "time": "2021-10-03T21:08:15+00:00"
+            "time": "2021-10-03T21:20:16+00:00"
         },
         {
             "name": "laravel/valet",
