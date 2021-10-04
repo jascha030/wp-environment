@@ -7,5 +7,9 @@ public/.env
 # Wordpress
 /public/wordpress/
 
+# Twentytwentyone
+/public/app/themes/twentytwentyone/
+
 # Composer
 /public/vendor/
+
