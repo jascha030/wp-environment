@@ -13,3 +13,6 @@ public/.env
 # Composer
 /public/vendor/
 
+# MacOS
+**.DS_Store
+
