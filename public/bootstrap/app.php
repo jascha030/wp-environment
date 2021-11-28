@@ -32,22 +32,22 @@ if (! file_exists($autoloader)) {
 require_once $autoloader;
 
 /**
- * Load dotEnv file.
+ * Create DotEnv.
  */
-$env = Dotenv::createImmutable($public, '.env')->load();
+$env = Dotenv::createImmutable($public, '.env');
+
+//$env->required(WPConfigStore::REQUIRED_VALUES);
+$env->ifPresent(WPConfigStore::BOOLEAN_VALUES)
+    ->isBoolean();
 
 /**
  * Create WPConfigStore instance, to convert dotEnv variables to constants.
  */
-WPConfigStore::create($env);
-
-// $finder = new Symfony\Component\Finder\Finder();
-// $count = $finder->in($public . '/app/themes')->directories()->count();
+WPConfigStore::create($env->load());
 
 /**
  * Add custom content root
  */
-WPConfigStore::add('CONTENT_DIR', '/app');
 WPConfigStore::add('WP_CONTENT_DIR', $public . '/app');
 
 
