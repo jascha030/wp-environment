@@ -20,7 +20,6 @@ $public = dirname(__DIR__);
  * Create DotEnv.
  */
 $env = Dotenv::createImmutable($public, '.env');
-
 $env->ifPresent(WPConfigStore::BOOLEAN_VALUES)
     ->isBoolean();
 
