@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PHP CS Fixer Settings
+ * PHP CS Fixer Settings.
  */
 return [
     /**

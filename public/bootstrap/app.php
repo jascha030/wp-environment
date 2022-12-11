@@ -4,24 +4,27 @@ use Dotenv\Dotenv;
 use Jascha030\Xerox\Config\WPConfigStore;
 
 /**
- * Public path
+ * Public path.
  */
 $public = dirname(__DIR__);
 
 /**
- * Autoloader path
+ * Autoloader path.
  */
 $autoloader = $public . '/vendor/autoload.php';
 
 /**
  * Load Composer autoloader/ throw exception when autoload.php is not found in expected directory.
+ *
  * @throws \RuntimeException
  */
 if (! file_exists($autoloader)) {
-    $errorMsg = sprintf('Couldn\'t find Composer\'s Autoloader file in path: "%s", please make sure you run the %s or %s commands.',
+    $errorMsg = sprintf(
+        'Couldn\'t find Composer\'s Autoloader file in path: "%s", please make sure you run the %s or %s commands.',
         $autoloader,
         '<pre>composer install --prefer-source</pre>',
-        '<pre>composer dump-autoload</pre>');
+        '<pre>composer dump-autoload</pre>'
+    );
 
     throw new \RuntimeException($errorMsg);
 }
@@ -46,10 +49,9 @@ $env->ifPresent(WPConfigStore::BOOLEAN_VALUES)
 WPConfigStore::create($env->load());
 
 /**
- * Add custom content root
+ * Add custom content root.
  */
 WPConfigStore::add('WP_CONTENT_DIR', $public . '/app');
-
 
 /**
  * WordPress database table prefix.
