@@ -19,21 +19,22 @@
             ]
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": "~8.0||~8.1||~8.2",
         "composer/installers": "*",
         "jascha030/xerox": "^0",
-        "roots/wordpress-no-content": "^6.1",
+        "roots/wordpress": "^6.1",
         "roots/wp-password-bcrypt": "^1.0",
         "vlucas/phpdotenv": "^5.5",
         "wpackagist-theme/twentytwentythree": "^1.0"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-latest",
-        "composer/composer": "^2.3"
+        "bamarni/composer-bin-plugin": "^1.8",
+        "composer/composer": "^2.3",
+        "roave/security-advisories": "dev-latest"
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "extra": {
         "installer-paths": {
             "public/app/mu-plugins/{$name}/": [
@@ -58,7 +59,8 @@
         "sort-packages": true,
         "allow-plugins": {
             "composer/installers": true,
-            "roots/wordpress-core-installer": true
+            "roots/wordpress-core-installer": true,
+            "bamarni/composer-bin-plugin": true
         }
     },
     "scripts": {
