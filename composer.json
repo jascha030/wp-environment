@@ -65,11 +65,9 @@
         "initwp": "xerographer init",
         "init:wp": "@initwp",
         "php-cs-fixer": "tools/php-cs-fixer",
-        "phpunit": "tools/phpunit",
         "phpstan": "tools/phpstan",
         "format": "@php-cs-fixer fix --config=.php-cs-fixer.dist.php",
         "format:dev": "@php-cs-fixer fix --config=.php-cs-fixer.php",
-        "test": "@phpunit -c phpunit.xml",
         "analyze": "@phpstan analyze --config=phpstan.neon"
     }
 }
