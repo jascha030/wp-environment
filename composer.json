@@ -1,74 +1,75 @@
 {
-  "name": "jascha030/wp-starter",
-  "type": "project",
-  "description": "Wordpress development environment.",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Jascha030",
-      "email": "contact@jaschavanaalst.nl"
-    }
-  ],
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://wpackagist.org",
-      "only": [
-        "wpackagist-plugin/*",
-        "wpackagist-theme/*"
-      ]
-    }
-  ],
-  "require": {
-    "php": "~8.0||~8.1||~8.2",
-    "composer/installers": "*",
-    "jascha030/xerox": "^0",
-    "roots/wordpress-no-content": "^6.1",
-    "roots/wp-password-bcrypt": "^1.0",
-    "vlucas/phpdotenv": "^5.5",
-    "wpackagist-theme/twentytwentythree": "^1.0"
-  },
-  "require-dev": {
-    "roave/security-advisories": "dev-latest",
-    "composer/composer": "^2.3"
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "extra": {
-    "installer-paths": {
-      "public/app/mu-plugins/{$name}/": [
-        "roots/wp-password-bcrypt",
-        "type:wordpress-muplugin"
-      ],
-      "public/app/plugins/{$name}/": [
-        "type:wordpress-plugin"
-      ],
-      "public/app/themes/{$name}/": [
-        "type:wordpress-theme"
-      ]
+    "name": "jascha030/wp-starter",
+    "type": "project",
+    "description": "Wordpress development environment.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jascha030",
+            "email": "contact@jaschavanaalst.nl"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org",
+            "only": [
+                "wpackagist-plugin/*",
+                "wpackagist-theme/*"
+            ]
+        }
+    ],
+    "require": {
+        "php": "~8.0||~8.1||~8.2",
+        "composer/installers": "*",
+        "jascha030/xerox": "^0",
+        "roots/wordpress-no-content": "^6.1",
+        "roots/wp-password-bcrypt": "^1.0",
+        "vlucas/phpdotenv": "^5.5",
+        "wpackagist-theme/twentytwentythree": "^1.0"
     },
-    "wordpress-install-dir": "public/wordpress"
-  },
-  "config": {
-    "vendor-dir": "public/vendor",
-    "platform-check": false,
-    "platform": {
-      "php": "8.0.2"
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "composer/composer": "^2.3"
     },
-    "sort-packages": true,
-    "allow-plugins": {
-      "composer/installers": true,
-      "roots/wordpress-core-installer": true
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "installer-paths": {
+            "public/app/mu-plugins/{$name}/": [
+                "roots/wp-password-bcrypt",
+                "type:wordpress-muplugin"
+            ],
+            "public/app/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
+            "public/app/themes/{$name}/": [
+                "type:wordpress-theme"
+            ]
+        },
+        "wordpress-install-dir": "public/wordpress"
+    },
+    "config": {
+        "vendor-dir": "public/vendor",
+        "platform-check": false,
+        "platform": {
+            "php": "8.0.2"
+        },
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "roots/wordpress-core-installer": true
+        }
+    },
+    "scripts": {
+        "initwp": "xerographer init",
+        "init:wp": "@initwp",
+        "php-cs-fixer": "tools/php-cs-fixer",
+        "phpunit": "tools/phpunit",
+        "phpstan": "tools/phpstan",
+        "format": "@php-cs-fixer fix --config=.php-cs-fixer.dist.php",
+        "format:dev": "@php-cs-fixer fix --config=.php-cs-fixer.php",
+        "test": "@phpunit -c phpunit.xml",
+        "analyze": "@phpstan analyze --config=phpstan.neon"
     }
-  },
-  "scripts": {
-    "initwp": "xerographer init",
-    "init:wp": "@initwp",
-    "php-cs-fixer": "tools/php-cs-fixer",
-    "phpunit": "tools/phpunit",
-    "phpstan": "tools/phpstan",
-    "format": "@php-cs-fixer fix --config=.php-cs-fixer.dist.php",
-    "test": "@phpunit -c phpunit.xml",
-    "analyze": "@phpstan analyze --config=phpstan.neon"
-  }
 }
