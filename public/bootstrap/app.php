@@ -1,45 +1,26 @@
 <?php
 
+namespace Jascha030\Xerox;
+
 use Dotenv\Dotenv;
 use Jascha030\Xerox\Config\WPConfigStore;
+use RuntimeException;
 
-/**
- * Public path.
- */
 $public = dirname(__DIR__);
 
-/**
- * Autoloader path.
- */
-$autoloader = $public . '/vendor/autoload.php';
+(static function () use($public) {
+    if (! file_exists($autoloader = $public . '/vendor/autoload.php')) {
+        throw new RuntimeException(sprintf('Couldn\'t find "autoload.php" file in path: %s.', $autoloader));
+    }
 
-/**
- * Load Composer autoloader/ throw exception when autoload.php is not found in expected directory.
- *
- * @throws \RuntimeException
- */
-if (! file_exists($autoloader)) {
-    $errorMsg = sprintf(
-        'Couldn\'t find Composer\'s Autoloader file in path: "%s", please make sure you run the %s or %s commands.',
-        $autoloader,
-        '<pre>composer install --prefer-source</pre>',
-        '<pre>composer dump-autoload</pre>'
-    );
-
-    throw new \RuntimeException($errorMsg);
-}
-
-/**
- * Require autoloader when it does exist.
- */
-require_once $autoloader;
+    include_once $autoloader;
+})();
 
 /**
  * Create DotEnv.
  */
 $env = Dotenv::createImmutable($public, '.env');
 
-//$env->required(WPConfigStore::REQUIRED_VALUES);
 $env->ifPresent(WPConfigStore::BOOLEAN_VALUES)
     ->isBoolean();
 
