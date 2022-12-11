@@ -31,7 +31,6 @@
         "wpackagist-theme/twentytwentythree": "^1.0"
     },
     "require-dev": {
-        "bamarni/composer-bin-plugin": "^1.8",
         "composer/composer": "^2.3",
         "roave/security-advisories": "dev-latest"
     },
@@ -59,8 +58,7 @@
         "sort-packages": true,
         "allow-plugins": {
             "composer/installers": true,
-            "roots/wordpress-core-installer": true,
-            "bamarni/composer-bin-plugin": true
+            "roots/wordpress-core-installer": true
         }
     },
     "scripts": {
