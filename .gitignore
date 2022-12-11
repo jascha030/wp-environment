@@ -3,6 +3,7 @@
 .vscode/
 
 public/.env
+
 # Dynamic
 .var/
 temp/
@@ -18,6 +19,7 @@ public/wordpress/
 public/vendor/
 public/node_modules/
 tools/
+vendor-bin/
 
 # Env
 .env
