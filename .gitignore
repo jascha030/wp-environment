@@ -1,18 +1,32 @@
-# Jetbrains IDE's
-/.idea/
+# IDE Projectfiles
+.idea/
+.vscode/
 
-# Environment
 public/.env
+# Dynamic
+.var/
+temp/
+tmp/
+dist/
+build/
+.cache/
+**.cache
 
-# Wordpress
-/public/wordpress/
+# Library
+public/app/themes/twenty*
+public/wordpress/
+public/vendor/
+public/node_modules/
+tools/
 
-# Twentytwentyone
-/public/app/themes/twentytwentyone/
+# Env
+.env
+auth.json
+.pm.toml
 
-# Composer
-/public/vendor/
-
-# MacOS
-**.DS_Store
+# Other
+*.DS_Store
+.DS_Store
+*.sql
+TODO.md
 
