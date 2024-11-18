@@ -2,7 +2,6 @@
     "name": "jascha030/wp-starter",
     "type": "project",
     "description": "Wordpress development environment.",
-    "license": "MIT",
     "authors": [
         {
             "name": "Jascha030",
@@ -22,16 +21,18 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "~8.0||~8.1||~8.2",
-        "composer/installers": "*",
-        "jascha030/xerox": "^0",
-        "roots/wordpress": "^6.1",
-        "roots/wp-password-bcrypt": "^1.0",
-        "vlucas/phpdotenv": "^5.5",
-        "wpackagist-theme/twentytwentythree": "^1.0"
+        "php": ">=8.2",
+        "bamarni/composer-bin-plugin": "^1.8",
+        "composer/installers": "^2.3",
+        "jascha030/xerox": "^0.4.0",
+        "roots/wordpress": "^6.7",
+        "roots/wp-password-bcrypt": "^1.2",
+        "vlucas/phpdotenv": "^5.6",
+        "wpackagist-theme/twentytwentythree": "^1.6"
     },
     "require-dev": {
         "composer/composer": "^2.3",
+        "ergebnis/composer-normalize": "^2.44",
         "roave/security-advisories": "dev-latest"
     },
     "extra": {
@@ -47,18 +48,28 @@
                 "type:wordpress-theme"
             ]
         },
-        "wordpress-install-dir": "public/wordpress"
+        "wordpress-install-dir": "public/wordpress",
+        "bamarni-bin": {
+            "bin-links": true,
+            "forward-command": true
+        },
+        "composer-normalize": {
+            "indent-style": "space",
+            "indent-size": 4
+        }
     },
     "config": {
         "preferred-install": "dist",
         "vendor-dir": "public/vendor",
         "platform-check": false,
         "platform": {
-            "php": "8.0.2"
+            "php": "8.2"
         },
         "sort-packages": true,
         "allow-plugins": {
+            "bamarni/composer-bin-plugin": true,
             "composer/installers": true,
+            "ergebnis/composer-normalize": true,
             "roots/wordpress-core-installer": true
         }
     },
