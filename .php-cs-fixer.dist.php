@@ -14,15 +14,14 @@ declare(strict_types=1);
 use PhpCsFixer\Finder;
 use Jascha030\PhpCsFixer\Config;
 
-/**
- * Cache dir and file location.
- */
-$cacheDirectory = __DIR__ . '/.var/cache';
-$cacheFile      = "{$cacheDirectory}/.php-cs-fixer.cache";
+require_once __DIR__ . '/tools/php-cs-fixer/vendor/autoload.php';
 
 /**
  * Create a .cache dir if not already present.
  */
+$cacheDirectory = __DIR__ . '/.var/cache';
+$cacheFile      = "{$cacheDirectory}/.php-cs-fixer.cache";
+
 if (! file_exists($cacheDirectory) && ! mkdir($cacheDirectory, 0700, true) && ! is_dir($cacheDirectory)) {
     throw new RuntimeException(sprintf('Directory "%s" was not created', $cacheDirectory));
 }
