@@ -18,8 +18,9 @@ public/app/themes/twenty*
 public/wordpress/
 public/vendor/
 public/node_modules/
-tools/
-vendor-bin/
+tools/**
+!tools/**/**
+tools/**/vendor/
 
 # Env
 .env
