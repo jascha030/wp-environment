@@ -1,13 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Tells WordPress to load the WordPress theme and output it.
  *
- * @var bool
+ * @var bool WP_USE_THEMES
  */
 define('WP_USE_THEMES', true);
 
-/**
- * Loads the WordPress Environment and Template.
- */
 require __DIR__ . '/wordpress/wp-blog-header.php';

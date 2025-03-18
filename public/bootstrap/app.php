@@ -8,23 +8,26 @@ use RuntimeException;
 
 $public = dirname(__DIR__);
 
-(static function () use($public) {
+/**
+ * Load composer autoloader.
+ */
+(static function () use ($public): void {
     if (! file_exists($autoloader = $public . '/vendor/autoload.php')) {
         throw new RuntimeException(sprintf('Couldn\'t find "autoload.php" file in path: %s.', $autoloader));
     }
 
-    include_once $autoloader;
+    require_once $autoloader;
 })();
 
 /**
- * Create DotEnv.
+ * Load env.
  */
 $env = Dotenv::createImmutable($public, '.env');
 $env->ifPresent(WPConfigStore::BOOLEAN_VALUES)
     ->isBoolean();
 
 /**
- * Create WPConfigStore instance, to convert dotEnv variables to constants.
+ * Create WPConfigStore, converts dotEnv variables to constants.
  */
 WPConfigStore::create($env->load());
 
@@ -35,6 +38,7 @@ WPConfigStore::add('WP_CONTENT_DIR', $public . '/app');
 
 /**
  * WordPress database table prefix.
+ *
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
@@ -45,7 +49,8 @@ if (WPConfigStore::has('TABLE_PREFIX')) {
 }
 
 /**
- * Initializes WP constants.
+ * Initializes WP-required constants.
+ *
  * Any environment variable that need further customization should be edited before this line.
  */
 WPConfigStore::save();
