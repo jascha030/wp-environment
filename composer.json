@@ -1,25 +1,13 @@
 {
     "name": "jascha030/wp-starter",
-    "type": "project",
     "description": "Wordpress development environment.",
+    "type": "project",
     "authors": [
         {
             "name": "Jascha030",
             "email": "contact@jaschavanaalst.nl"
         }
     ],
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://wpackagist.org",
-            "only": [
-                "wpackagist-plugin/*",
-                "wpackagist-theme/*"
-            ]
-        }
-    ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "php": ">=8.2",
         "bamarni/composer-bin-plugin": "^1.8",
@@ -35,7 +23,43 @@
         "ergebnis/composer-normalize": "^2.44",
         "roave/security-advisories": "dev-latest"
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org",
+            "only": [
+                "wpackagist-plugin/*",
+                "wpackagist-theme/*"
+            ]
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "bamarni/composer-bin-plugin": true,
+            "composer/installers": true,
+            "ergebnis/composer-normalize": true,
+            "roots/wordpress-core-installer": true
+        },
+        "platform": {
+            "php": "8.2"
+        },
+        "platform-check": false,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "vendor-dir": "public/vendor"
+    },
     "extra": {
+        "bamarni-bin": {
+            "bin-links": true,
+            "forward-command": true,
+            "target-directory": "tools"
+        },
+        "composer-normalize": {
+            "indent-size": 4,
+            "indent-style": "space"
+        },
         "installer-paths": {
             "public/app/mu-plugins/{$name}/": [
                 "roots/wp-password-bcrypt",
@@ -48,38 +72,10 @@
                 "type:wordpress-theme"
             ]
         },
-        "wordpress-install-dir": "public/wordpress",
-        "bamarni-bin": {
-            "bin-links": true,
-            "forward-command": true
-        },
-        "composer-normalize": {
-            "indent-style": "space",
-            "indent-size": 4
-        }
-    },
-    "config": {
-        "preferred-install": "dist",
-        "vendor-dir": "public/vendor",
-        "platform-check": false,
-        "platform": {
-            "php": "8.2"
-        },
-        "sort-packages": true,
-        "allow-plugins": {
-            "bamarni/composer-bin-plugin": true,
-            "composer/installers": true,
-            "ergebnis/composer-normalize": true,
-            "roots/wordpress-core-installer": true
-        }
+        "wordpress-install-dir": "public/wordpress"
     },
     "scripts": {
-        "initwp": "xerographer init",
         "init:wp": "@initwp",
-        "php-cs-fixer": "tools/php-cs-fixer",
-        "phpstan": "tools/phpstan",
-        "format": "@php-cs-fixer fix --config=.php-cs-fixer.dist.php",
-        "format:dev": "@php-cs-fixer fix --config=.php-cs-fixer.php",
-        "analyze": "@phpstan analyze --configuration=phpstan.neon"
+        "initwp": "xerographer init"
     }
 }
