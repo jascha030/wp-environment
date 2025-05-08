@@ -8,6 +8,11 @@ use Dotenv\Dotenv;
 use Jascha030\Xerox\Config\WPConfigStore;
 use RuntimeException;
 
+use function define;
+use function defined;
+use function dirname;
+use function sprintf;
+
 $public = dirname(__DIR__);
 
 /**
@@ -60,4 +65,3 @@ WPConfigStore::save();
 if (! defined('ABSPATH')) {
     define('ABSPATH', dirname(__DIR__) . '/wordpress/');
 }
-
