@@ -32,10 +32,11 @@ $finder = Finder::create()
         'tests/Fixtures',
         'vendor',
     ])
+    ->ignoreVCSIgnored(true)
     ->ignoreDotFiles(false);
 
 return (new Config(
-    Config::PHP_74,
+    Config::PHP_82,
     <<<'EOF'
         This file is part of the Jascha van Aalst WordPress Back-end PHP-CS-Fixer Config package.
 
